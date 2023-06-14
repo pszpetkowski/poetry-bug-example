@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "foo_app"
+version = "0.1.0"
+description = "Foo app"
+authors = ["Foo"]
+license = "MIT"
+
+packages = [
+    { include = "foo_app", from = "src" },
+]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+foo = { version = "0.1.0", source = "pypi_foo" }
+psycopg = "^3.1.9"
+
+[tool.poetry.group.pypi.dependencies]
+twine = "^4.0.2"
+
+[[tool.poetry.source]]
+name = "pypi_foo"
+url = "http://127.0.0.1:8080/simple/"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "foo_base"
+version = "0.1.0"
+description = "Foo base"
+authors = ["Foo"]
+license = "MIT"
+
+packages = [
+    { include = "foo_base", from = "src" },
+]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.97.0"
+
+[tool.poetry.group.pypi.dependencies]
+twine = "^4.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
