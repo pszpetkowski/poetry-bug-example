@@ -25,6 +25,10 @@ psycopg = "^3.1.9"
 [tool.poetry.group.pypi.dependencies]
 twine = "^4.0.2"
 
+
+[tool.poetry.group.explicit.dependencies]
+foo-base = {version = "*", source = "pypi_foo"}
+
 [[tool.poetry.source]]
 name = "pypi_foo"
 url = "http://127.0.0.1:8080/simple/"
